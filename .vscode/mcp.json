@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "helpdesk": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["--import", "tsx", "${workspaceFolder}/src/main.ts"],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  }
+}
