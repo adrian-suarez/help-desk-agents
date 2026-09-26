@@ -37,8 +37,6 @@ Los agentes no tienen terminal ni acceso a archivos: solo pueden llamar a las he
 
 ![Arquitectura de help-desk-agents](docs/arch_diagram.png)
 
-> La imagen se genera a partir de [docs/architecture-context.md](docs/architecture-context.md), que contiene la descripción para la herramienta de diagramas y el código Mermaid equivalente.
-
 ### Flujo de un ticket
 
 ```mermaid
