@@ -1,0 +1,18 @@
+{
+  "latencyThresholdMs": 800,
+  "checkTimeoutMs": 3000,
+  "vpn": {
+    "dns": ["localhost"],
+    "tcp": [{ "name": "vpn-gateway", "host": "127.0.0.1", "port": 10443 }],
+    "http": [{ "name": "vpn-portal", "url": "http://127.0.0.1:18080/health" }]
+  },
+  "services": {
+    "dns": ["localhost"],
+    "tcp": [],
+    "http": [
+      { "name": "intranet", "url": "http://127.0.0.1:18080/health" },
+      { "name": "sso", "url": "http://127.0.0.1:18080/sso/health" },
+      { "name": "erp", "url": "http://127.0.0.1:18080/erp/health" }
+    ]
+  }
+}
