@@ -1,0 +1,39 @@
+{
+  "name": "help-desk-agents",
+  "version": "1.0.0-RC1",
+  "description": "Servidor MCP de mesa de ayuda (Clean Architecture, Drizzle, Postgres)",
+  "scripts": {
+    "dev": "node --env-file=.env --import tsx src/main.ts",
+    "inspect": "npx @modelcontextprotocol/inspector node --env-file=.env --import tsx src/main.ts",
+    "typecheck": "tsc",
+    "test": "node --import tsx --test \"test/**/*.test.ts\"",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose down",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "setup": "npm run db:up && npm run db:migrate && npm run db:seed",
+    "db:seed": "node --env-file=.env --import tsx tools/seed.ts",
+    "mock:services": "node tools/mock-services.mjs",
+    "demo": "node --env-file=.env --import tsx tools/demo.ts"
+  },
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.1.0",
+    "drizzle-orm": "^0.45.3",
+    "postgres": "^3.4.9",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@modelcontextprotocol/client": "^2.1.0",
+    "@types/node": "^26.6.3",
+    "drizzle-kit": "^0.31.11",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}
